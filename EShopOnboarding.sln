@@ -7,6 +7,8 @@ Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "EShopOnboarding", "EShopOnb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopAPI", "EShopAPI\EShopAPI.csproj", "{559A4CA7-E5B2-41C4-8DD0-1FA407EA370D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{0B9039EB-3BC3-47EE-A34A-C0D1A880EC55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,14 @@ Global
 		{559A4CA7-E5B2-41C4-8DD0-1FA407EA370D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{559A4CA7-E5B2-41C4-8DD0-1FA407EA370D}.Release|x64.ActiveCfg = Release|Any CPU
 		{559A4CA7-E5B2-41C4-8DD0-1FA407EA370D}.Release|x64.Build.0 = Release|Any CPU
+		{0B9039EB-3BC3-47EE-A34A-C0D1A880EC55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B9039EB-3BC3-47EE-A34A-C0D1A880EC55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B9039EB-3BC3-47EE-A34A-C0D1A880EC55}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0B9039EB-3BC3-47EE-A34A-C0D1A880EC55}.Debug|x64.Build.0 = Debug|Any CPU
+		{0B9039EB-3BC3-47EE-A34A-C0D1A880EC55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B9039EB-3BC3-47EE-A34A-C0D1A880EC55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B9039EB-3BC3-47EE-A34A-C0D1A880EC55}.Release|x64.ActiveCfg = Release|Any CPU
+		{0B9039EB-3BC3-47EE-A34A-C0D1A880EC55}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
