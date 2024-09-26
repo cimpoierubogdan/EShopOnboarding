@@ -5,13 +5,17 @@ VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "EShopOnboarding", "EShopOnboarding\EShopOnboarding.sfproj", "{E8E8F2C9-C1E8-42D6-A159-D0F6BA8832F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopAPI", "EShopAPI\EShopAPI.csproj", "{559A4CA7-E5B2-41C4-8DD0-1FA407EA370D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EShopAPI", "EShopAPI\EShopAPI.csproj", "{559A4CA7-E5B2-41C4-8DD0-1FA407EA370D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{0B9039EB-3BC3-47EE-A34A-C0D1A880EC55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{0B9039EB-3BC3-47EE-A34A-C0D1A880EC55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductActorService", "ProductActorService\ProductActorService.csproj", "{5BC94A8F-45F1-4E69-AADE-142198E9B9DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductActorService", "ProductActorService\ProductActorService.csproj", "{5BC94A8F-45F1-4E69-AADE-142198E9B9DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductActorService.Interfaces", "ProductActorService.Interfaces\ProductActorService.Interfaces.csproj", "{D0885C79-BFE9-4422-8873-D918CB42E489}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductActorService.Interfaces", "ProductActorService.Interfaces\ProductActorService.Interfaces.csproj", "{D0885C79-BFE9-4422-8873-D918CB42E489}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartActorService", "CartActorService\CartActorService.csproj", "{2578FAB3-451A-4FE4-AB0F-3AA948E8E0DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartActorService.Interfaces", "CartActorService.Interfaces\CartActorService.Interfaces.csproj", "{96BDA74C-875C-4C68-B1B4-162D9160B435}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +69,22 @@ Global
 		{D0885C79-BFE9-4422-8873-D918CB42E489}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D0885C79-BFE9-4422-8873-D918CB42E489}.Release|x64.ActiveCfg = Release|Any CPU
 		{D0885C79-BFE9-4422-8873-D918CB42E489}.Release|x64.Build.0 = Release|Any CPU
+		{2578FAB3-451A-4FE4-AB0F-3AA948E8E0DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2578FAB3-451A-4FE4-AB0F-3AA948E8E0DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2578FAB3-451A-4FE4-AB0F-3AA948E8E0DD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2578FAB3-451A-4FE4-AB0F-3AA948E8E0DD}.Debug|x64.Build.0 = Debug|Any CPU
+		{2578FAB3-451A-4FE4-AB0F-3AA948E8E0DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2578FAB3-451A-4FE4-AB0F-3AA948E8E0DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2578FAB3-451A-4FE4-AB0F-3AA948E8E0DD}.Release|x64.ActiveCfg = Release|Any CPU
+		{2578FAB3-451A-4FE4-AB0F-3AA948E8E0DD}.Release|x64.Build.0 = Release|Any CPU
+		{96BDA74C-875C-4C68-B1B4-162D9160B435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96BDA74C-875C-4C68-B1B4-162D9160B435}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96BDA74C-875C-4C68-B1B4-162D9160B435}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{96BDA74C-875C-4C68-B1B4-162D9160B435}.Debug|x64.Build.0 = Debug|Any CPU
+		{96BDA74C-875C-4C68-B1B4-162D9160B435}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96BDA74C-875C-4C68-B1B4-162D9160B435}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96BDA74C-875C-4C68-B1B4-162D9160B435}.Release|x64.ActiveCfg = Release|Any CPU
+		{96BDA74C-875C-4C68-B1B4-162D9160B435}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

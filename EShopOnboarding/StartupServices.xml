@@ -5,6 +5,9 @@
     <Parameter Name="ProductActorServiceActorService_PartitionCount" DefaultValue="10" />
     <Parameter Name="ProductActorServiceActorService_MinReplicaSetSize" DefaultValue="3" />
     <Parameter Name="ProductActorServiceActorService_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="CartActorServiceActorService_PartitionCount" DefaultValue="10" />
+    <Parameter Name="CartActorServiceActorService_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="CartActorServiceActorService_TargetReplicaSetSize" DefaultValue="3" />
   </Parameters>
   <Services>
     <!-- The section below creates instances of service types, when an instance of this 
@@ -20,6 +23,11 @@
     <Service Name="ProductActorServiceActorService" GeneratedIdRef="d9521049-a08c-44f6-a68a-f9924615c360|Persisted">
       <StatefulService ServiceTypeName="ProductActorServiceActorServiceType" TargetReplicaSetSize="[ProductActorServiceActorService_TargetReplicaSetSize]" MinReplicaSetSize="[ProductActorServiceActorService_MinReplicaSetSize]">
         <UniformInt64Partition PartitionCount="[ProductActorServiceActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="CartActorServiceActorService" GeneratedIdRef="d2125408-c713-4ad9-8c0f-9cf5127e4943|Persisted">
+      <StatefulService ServiceTypeName="CartActorServiceActorServiceType" TargetReplicaSetSize="[CartActorServiceActorService_TargetReplicaSetSize]" MinReplicaSetSize="[CartActorServiceActorService_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[CartActorServiceActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
       </StatefulService>
     </Service>
   </Services>

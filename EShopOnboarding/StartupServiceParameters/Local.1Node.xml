@@ -5,5 +5,8 @@
     <Parameter Name="ProductActorServiceActorService_PartitionCount" Value="1" />
     <Parameter Name="ProductActorServiceActorService_TargetReplicaSetSize" Value="1" />
     <Parameter Name="ProductActorServiceActorService_MinReplicaSetSize" Value="1" />
+    <Parameter Name="CartActorServiceActorService_PartitionCount" Value="1" />
+    <Parameter Name="CartActorServiceActorService_TargetReplicaSetSize" Value="1" />
+    <Parameter Name="CartActorServiceActorService_MinReplicaSetSize" Value="1" />
   </Parameters>
 </StartupServices>
