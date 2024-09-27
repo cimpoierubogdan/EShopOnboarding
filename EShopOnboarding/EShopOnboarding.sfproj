@@ -40,6 +40,7 @@
     <ProjectReference Include="..\EShopAPI\EShopAPI.csproj">
       <ServiceLaunchUrl>http://localhost:{ServicePort}/swagger</ServiceLaunchUrl>
     </ProjectReference>
+    <ProjectReference Include="..\OrderService\OrderService.csproj" />
     <ProjectReference Include="..\ProductActorService\ProductActorService.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />

@@ -22,5 +22,15 @@ namespace Common
         public float total { get; set; }
         [DataMember]
         public int status { get; set; }
+
+        public Order(int id, int userId, List<Product> products, float total)
+        {
+            this.id = id;
+            this.userId = userId;
+            this.products = products;
+            this.total = total;
+            this.status = StatusPending;
+        }
+
     }
 }

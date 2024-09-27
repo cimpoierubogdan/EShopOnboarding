@@ -51,7 +51,7 @@ namespace EShopAPI.Controllers
                 );
 
             var cart = await cartProxy.GetCart(new CancellationToken());
-            cart.products.Add( product );
+            cart.AddProduct( product );
             await cartProxy.SetCart(cart, new CancellationToken());
             product.Stock--;
             await productProxy.AddProduct(product, new CancellationToken());

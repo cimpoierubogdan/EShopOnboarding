@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductActorService", "Prod
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductActorService.Interfaces", "ProductActorService.Interfaces\ProductActorService.Interfaces.csproj", "{D0885C79-BFE9-4422-8873-D918CB42E489}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartActorService", "CartActorService\CartActorService.csproj", "{2578FAB3-451A-4FE4-AB0F-3AA948E8E0DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CartActorService", "CartActorService\CartActorService.csproj", "{2578FAB3-451A-4FE4-AB0F-3AA948E8E0DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartActorService.Interfaces", "CartActorService.Interfaces\CartActorService.Interfaces.csproj", "{96BDA74C-875C-4C68-B1B4-162D9160B435}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CartActorService.Interfaces", "CartActorService.Interfaces\CartActorService.Interfaces.csproj", "{96BDA74C-875C-4C68-B1B4-162D9160B435}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService", "OrderService\OrderService.csproj", "{1BCCAD8A-7741-4F4A-8CC3-5DA3ED4CEB28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +87,14 @@ Global
 		{96BDA74C-875C-4C68-B1B4-162D9160B435}.Release|Any CPU.Build.0 = Release|Any CPU
 		{96BDA74C-875C-4C68-B1B4-162D9160B435}.Release|x64.ActiveCfg = Release|Any CPU
 		{96BDA74C-875C-4C68-B1B4-162D9160B435}.Release|x64.Build.0 = Release|Any CPU
+		{1BCCAD8A-7741-4F4A-8CC3-5DA3ED4CEB28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BCCAD8A-7741-4F4A-8CC3-5DA3ED4CEB28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BCCAD8A-7741-4F4A-8CC3-5DA3ED4CEB28}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1BCCAD8A-7741-4F4A-8CC3-5DA3ED4CEB28}.Debug|x64.Build.0 = Debug|Any CPU
+		{1BCCAD8A-7741-4F4A-8CC3-5DA3ED4CEB28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BCCAD8A-7741-4F4A-8CC3-5DA3ED4CEB28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BCCAD8A-7741-4F4A-8CC3-5DA3ED4CEB28}.Release|x64.ActiveCfg = Release|Any CPU
+		{1BCCAD8A-7741-4F4A-8CC3-5DA3ED4CEB28}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

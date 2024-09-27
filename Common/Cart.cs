@@ -10,8 +10,15 @@ namespace Common
     {
         public Cart() { 
             products = new List<Product>();
+            total = 0;
         }
         public List<Product> products { get; set; }
         public float total { get; set; }
+
+        public void AddProduct(Product product)
+        {
+            this.products.Add(product);
+            this.total += product.Price;
+        }
     }
 }
