@@ -71,8 +71,8 @@ namespace CartActorService
             _emptyCartTimer = RegisterTimer(
                     EmptyCart,
                     null,
-                    TimeSpan.FromMinutes(15),
-                    TimeSpan.FromMinutes(15)
+                    TimeSpan.FromMinutes(5),
+                    TimeSpan.FromMinutes(5)
                 );
         }
 
