@@ -11,5 +11,7 @@ namespace Common.Contracts
     {
         public Task<Order> SaveOrder(Order order);
         public Task<Order> GetOrder(int id);
+        public Task AddIPN(int orderId);
+        public Task<int> GetNextIPN();
     }
 }

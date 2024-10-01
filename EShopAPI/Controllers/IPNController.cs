@@ -19,9 +19,7 @@ namespace EShopAPI.Controllers
                 new Microsoft.ServiceFabric.Services.Client.ServicePartitionKey(partitionId)
                 );
 
-            var order = await orderProxy.GetOrder(orderId);
-            order.status = Order.StatusPaid;
-            await orderProxy.SaveOrder(order);
+            await orderProxy.AddIPN(orderId);
         }
     }
 }

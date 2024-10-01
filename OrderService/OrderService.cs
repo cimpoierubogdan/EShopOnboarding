@@ -52,9 +52,40 @@ namespace OrderService
             throw new Exception("could not fetch order");
         }
 
+        public async Task AddIPN(int orderId)
+        {
+            var queue = await this.GetIPNQueue();
+
+            using (var tx = this.StateManager.CreateTransaction())
+            {
+                await queue.EnqueueAsync(tx, orderId);
+                await tx.CommitAsync();
+            }
+        }
+
+        public async Task<int> GetNextIPN()
+        {
+            var queue = await this.GetIPNQueue();
+
+            using (var tx = this.StateManager.CreateTransaction())
+            {
+                var ipn = await queue.TryDequeueAsync(tx);
+                await tx.CommitAsync();
+
+                return ipn.Value;
+            }
+
+            throw new Exception("no ipn available");
+        }
+
         private async Task<IReliableDictionary<int, Order>> GetOrderDictionary()
         {
             return await this.StateManager.GetOrAddAsync<IReliableDictionary<int, Order>>("orders");
+        }
+
+        private async Task<IReliableQueue<int>> GetIPNQueue()
+        {
+            return await this.StateManager.GetOrAddAsync<IReliableQueue<int>>("ipns");
         }
 
         protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
