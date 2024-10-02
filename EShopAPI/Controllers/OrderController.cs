@@ -5,6 +5,7 @@ using Microsoft.ServiceFabric.Actors;
 using Common;
 using Microsoft.ServiceFabric.Services.Remoting.Client;
 using Common.Contracts;
+using EShopAPI.Requests;
 
 namespace EShopAPI.Controllers
 {
@@ -13,8 +14,9 @@ namespace EShopAPI.Controllers
     public class OrderController : ControllerBase
     {
         [HttpPost]
-        public async Task<Order> PlaceOrder([FromQuery] int userId)
+        public async Task<Order> PlaceOrder([FromBody] ByIdRequest byIdRequest)
         {
+            var userId = byIdRequest.id;
             var cartActorId = new ActorId(userId);
 
             var cartProxy = ActorProxy.Create<ICartActorService>(

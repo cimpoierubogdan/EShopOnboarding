@@ -1,5 +1,6 @@
 ﻿using CartActorService.Interfaces;
 using Common;
+using EShopAPI.Requests;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.ServiceFabric.Actors;
 using Microsoft.ServiceFabric.Actors.Client;
@@ -28,10 +29,10 @@ namespace EShopAPI.Controllers
         }
 
         [HttpPost]
-        public async Task AddProduct([FromQuery] int productId, int userId)
+        public async Task AddProduct([FromBody] AddToCartRequest addToCartRequest)
         {
-            var productActorId = new ActorId(productId);
-            var userActorId = new ActorId(userId);
+            var productActorId = new ActorId(addToCartRequest.productId);
+            var userActorId = new ActorId(addToCartRequest.userId);
 
             var productProxy = ActorProxy.Create<IProductActorService>(
                 productActorId,
