@@ -10,6 +10,9 @@ using Microsoft.ServiceFabric.Services.Runtime;
 using Common.Contracts;
 using Common;
 using Microsoft.ServiceFabric.Services.Remoting.Runtime;
+using System.Fabric.Description;
+using System.Collections.ObjectModel;
+using Common.Util;
 
 namespace OrderService
 {
@@ -29,9 +32,14 @@ namespace OrderService
                 {
                     order.id = (int)await orderDict.GetCountAsync(tx);
                     order.id++;
-                }
-                await orderDict.AddOrUpdateAsync(tx, order.id, order, (k, v) => v);
+                    await orderDict.AddAsync(tx, order.id, order);
+                    await tx.CommitAsync();
 
+                    return order;
+                }
+                var oldOrder = await orderDict.TryGetValueAsync(tx, order.id);
+                await orderDict.TryUpdateAsync(tx, order.id, order, oldOrder.Value);
+                
                 await tx.CommitAsync();
             }
 
@@ -98,7 +106,18 @@ namespace OrderService
             // TODO: Replace the following sample code with your own logic 
             //       or remove this RunAsync override if it's not needed in your service.
 
-            var myDictionary = await this.StateManager.GetOrAddAsync<IReliableDictionary<string, long>>("myDictionary");
+            //var myDictionary = await this.StateManager.GetOrAddAsync<IReliableDictionary<string, long>>("myDictionary");
+
+            FabricClient fabricClient = new FabricClient();
+            StatefulServiceLoadMetricDescription ordersCount = new StatefulServiceLoadMetricDescription();
+            ordersCount.Name = "ordersCount";
+            ordersCount.Weight = ServiceLoadMetricWeight.High;
+
+            StatefulServiceUpdateDescription description = new StatefulServiceUpdateDescription();
+            description.Metrics = new MetricsCollection();
+            description.Metrics.Add(ordersCount);
+
+            await fabricClient.ServiceManager.UpdateServiceAsync(new Uri(this.Context.ServiceName.AbsoluteUri), description);
 
             while (true)
             {
@@ -106,12 +125,22 @@ namespace OrderService
 
                 using (var tx = this.StateManager.CreateTransaction())
                 {
-                    var result = await myDictionary.TryGetValueAsync(tx, "Counter");
+                    var orderDict = await this.GetOrderDictionary();
+                    int orderCount = (int)(await orderDict.GetCountAsync(tx));
+                    ServiceEventSource.Current.ServiceMessage(
+                        this.Context,
+                        "order count {0} on partition {1}",
+                        orderCount,
+                        this.Partition.PartitionInfo.Id
+                        );
+                    this.Partition.ReportLoad(new List<LoadMetric> { new LoadMetric("ordersCount", orderCount) });
 
-                    ServiceEventSource.Current.ServiceMessage(this.Context, "Current Counter Value: {0}",
-                        result.HasValue ? result.Value.ToString() : "Value does not exist.");
+                    //var result = await myDictionary.TryGetValueAsync(tx, "Counter");
 
-                    await myDictionary.AddOrUpdateAsync(tx, "Counter", 0, (key, value) => ++value);
+                    //ServiceEventSource.Current.ServiceMessage(this.Context, "Current Counter Value: {0}",
+                    //    result.HasValue ? result.Value.ToString() : "Value does not exist.");
+
+                    //await myDictionary.AddOrUpdateAsync(tx, "Counter", 0, (key, value) => ++value);
 
                     // If an exception is thrown before calling CommitAsync, the transaction aborts, all changes are 
                     // discarded, and nothing is saved to the secondary replicas.
